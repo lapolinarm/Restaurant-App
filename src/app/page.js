@@ -30,6 +30,10 @@ export default function Home() {
     fetchRestaurants();
   }, []);
 
+  const handleDelete = (id) => {
+    setRestaurants(restaurants.filter(restaurant => restaurant.id !== id));
+  };
+
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>{error}</p>;
 
@@ -38,7 +42,11 @@ export default function Home() {
       <h1 className="text-3xl font-bold text-center mt-4">Lista de Restaurantes</h1>
       <div className="flex flex-wrap justify-center">
         {restaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+          <RestaurantCard
+            key={restaurant.id}
+            restaurant={restaurant}
+            onDelete={handleDelete} // Pasa la función handleDelete como prop
+          />
         ))}
       </div>
     </main>
