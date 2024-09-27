@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function RestaurantCard({ restaurant }) {
   return (
-    <div className="border rounded-lg shadow-lg p-4 flex flex-col text-left transition-shadow duration-300 hover:shadow-2xl w-80 h-200">
+    <div className="border rounded-lg shadow-lg p-4 flex flex-col text-left transition-shadow duration-300 hover:shadow-2xl max-w-80 h-44">
       <h2 className="text-xl font-semibold">{restaurant.name}</h2>
       <p>{restaurant.address}</p>
       <p className="text-gray-500">{restaurant.category}</p>
