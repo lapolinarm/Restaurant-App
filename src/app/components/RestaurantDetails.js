@@ -1,4 +1,6 @@
 // src/app/components/RestaurantDetails.js
+
+"use client";
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation'; // Para obtener el id de la URL
 
