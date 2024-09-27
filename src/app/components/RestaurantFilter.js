@@ -14,7 +14,7 @@ export default function RestaurantFilter({ onFilter }) {
       placeholder="Buscar por categoría"
       value={category}
       onChange={handleChange}
-      className="border rounded px-2 py-1 mb-4"
+      className="border rounded p-2 mb-4"
     />
   );
 }

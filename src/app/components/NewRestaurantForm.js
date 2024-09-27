@@ -45,7 +45,7 @@ export default function NewRestaurantForm({ onNewRestaurant }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex space-x-2 mb-4">
+    <form onSubmit={handleSubmit} className="flex flex-col space-y-4 mb-4">
       <input
         type="text"
         placeholder="Nombre"
@@ -70,7 +70,7 @@ export default function NewRestaurantForm({ onNewRestaurant }) {
         required
         className="border border-gray-300 p-2 rounded"
       />
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
         Nuevo Restaurante
       </button>
     </form>
