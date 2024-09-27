@@ -40,6 +40,12 @@ export default function Home() {
     setPopupVisible(false);
   };
 
+  // Función para manejar la eliminación de un restaurante
+  const handleDeleteRestaurant = (id) => {
+    setRestaurants(restaurants.filter(restaurant => restaurant.id !== id));
+    setFilteredRestaurants(filteredRestaurants.filter(restaurant => restaurant.id !== id));
+  };
+
   return (
     <main className="flex flex-col items-start p-4 mx-auto w-full max-w-4xl min-h-screen">
       <h1 className="text-2xl font-bold mb-2">Lista de Restaurantes</h1>
@@ -73,7 +79,11 @@ export default function Home() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 w-full">
         {filteredRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+          <RestaurantCard
+            key={restaurant.id}
+            restaurant={restaurant}
+            onDelete={handleDeleteRestaurant} // Pasa la función onDelete
+          />
         ))}
       </div>
     </main>
