@@ -7,11 +7,11 @@ import { useParams, useRouter } from "next/navigation";
 import Image from "next/image"; // Importar el componente Image de Next.js
 
 export default function RestaurantDetails() {
-  const { id } = useParams(); // Obtener el id de la URL
+  const { id } = useParams();
   const [restaurant, setRestaurant] = useState(null);
   const [chef, setChef] = useState(null);
   const [error, setError] = useState(null);
-  const router = useRouter(); // Para el botón de "Volver atrás"
+  const router = useRouter();
 
   useEffect(() => {
     // Función para obtener detalles del restaurante

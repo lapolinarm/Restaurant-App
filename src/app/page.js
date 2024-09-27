@@ -20,7 +20,7 @@ export default function Home() {
       const response = await fetch('https://the-fork.api.lewagon.com/api/v1/restaurants');
       const data = await response.json();
       setRestaurants(data);
-      setFilteredRestaurants(data); // Inicialmente, los restaurantes filtrados son todos
+      setFilteredRestaurants(data);
     } catch (error) {
       console.error('Error fetching restaurants:', error);
     }
@@ -31,7 +31,7 @@ export default function Home() {
     const filtered = restaurants.filter(restaurant =>
       restaurant.category.toLowerCase().includes(category.toLowerCase())
     );
-    setFilteredRestaurants(filtered); // Actualizamos solo los restaurantes filtrados
+    setFilteredRestaurants(filtered);
   };
 
   const handleNewRestaurant = (newRestaurant) => {
@@ -59,7 +59,7 @@ export default function Home() {
           <div className="bg-white p-6 rounded shadow-md w-96">
             <h2 className="text-xl font-bold mb-4 text-center">Crear Nuevo Restaurante</h2>
             <NewRestaurantForm onNewRestaurant={handleNewRestaurant} />
-            <div className="flex justify-between mt-4">
+            <div className="flex justify-center mt-4">
               <button
                 onClick={() => setPopupVisible(false)}
                 className="bg-red-500 text-white px-4 py-2 rounded"
