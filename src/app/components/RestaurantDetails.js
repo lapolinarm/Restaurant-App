@@ -79,10 +79,12 @@ export default function RestaurantDetails() {
           {/* Utilizamos el componente Image de Next.js */}
           <div className="w-32 h-32 mx-auto mb-4 relative">
             <Image
-              src={chef.avatar_url}
+              // src={chef.avatar_url || '/images/avatar.png'}
+              src={'/images/avatar.png'}
               alt={chef.name}
-              fill
               className="rounded-full object-cover"
+              width={50}
+              height={50}
               priority={true} // Cargar de manera prioritaria
             />
           </div>
