@@ -43,11 +43,11 @@ export default function Home() {
   return (
     <main className="flex flex-col items-start p-4 mx-auto w-full max-w-4xl min-h-screen">
       <h1 className="text-2xl font-bold mb-2">Lista de Restaurantes</h1>
-      <div className="flex items-stretch mb-4"> {/* Cambiar a items-stretch */}
+      <div className="flex items-stretch mb-4">
         <RestaurantFilter onFilter={handleFilter} />
         <button
           onClick={() => setPopupVisible(true)}
-          className="bg-blue-500 text-white p-2 rounded ml-4 flex items-center h-full" // Asegúrate de que el botón use h-full
+          className="bg-blue-500 text-white p-2 rounded ml-4 flex items-center h-full"
         >
           Nuevo Restaurante
         </button>
@@ -56,15 +56,17 @@ export default function Home() {
       {/* Popup para el formulario */}
       {isPopupVisible && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded shadow-md">
-            <h2 className="text-xl font-bold mb-4">Crear Nuevo Restaurante</h2>
+          <div className="bg-white p-6 rounded shadow-md w-96">
+            <h2 className="text-xl font-bold mb-4 text-center">Crear Nuevo Restaurante</h2>
             <NewRestaurantForm onNewRestaurant={handleNewRestaurant} />
-            <button
-              onClick={() => setPopupVisible(false)}
-              className="mt-4 bg-red-500 text-white p-2 rounded"
-            >
-              Cancelar
-            </button>
+            <div className="flex justify-between mt-4">
+              <button
+                onClick={() => setPopupVisible(false)}
+                className="bg-red-500 text-white px-4 py-2 rounded"
+              >
+                Cancelar
+              </button>
+            </div>
           </div>
         </div>
       )}
