@@ -43,13 +43,15 @@ export default function Home() {
   return (
     <main className="flex flex-col items-start p-4 mx-auto w-full max-w-4xl min-h-screen">
       <h1 className="text-2xl font-bold mb-2">Lista de Restaurantes</h1>
-      <RestaurantFilter onFilter={handleFilter} />
-      <button
-        onClick={() => setPopupVisible(true)}
-        className="bg-blue-500 text-white p-2 rounded mb-4"
-      >
-        Nuevo Restaurante
-      </button>
+      <div className="flex items-stretch mb-4"> {/* Cambiar a items-stretch */}
+        <RestaurantFilter onFilter={handleFilter} />
+        <button
+          onClick={() => setPopupVisible(true)}
+          className="bg-blue-500 text-white p-2 rounded ml-4 flex items-center h-full" // Asegúrate de que el botón use h-full
+        >
+          Nuevo Restaurante
+        </button>
+      </div>
 
       {/* Popup para el formulario */}
       {isPopupVisible && (
