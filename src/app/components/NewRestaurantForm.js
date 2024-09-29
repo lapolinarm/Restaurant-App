@@ -1,11 +1,20 @@
 // src/app/components/NewRestaurantForm.js
-"use client";
-import { useState } from 'react';
+// "use client";
+import { useRef, useEffect, useState } from 'react';
 
 export default function NewRestaurantForm({ onNewRestaurant }) {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [category, setCategory] = useState('');
+
+  const nameInputRef = useRef(null);
+
+  useEffect(() => {
+    // Enfocar el campo "Nombre del restaurante" cuando el componente se monta
+    if (nameInputRef.current) {
+      nameInputRef.current.focus();
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,6 +56,7 @@ export default function NewRestaurantForm({ onNewRestaurant }) {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col space-y-4 mb-4">
       <input
+        ref={nameInputRef}
         type="text"
         placeholder="Nombre"
         value={name}
