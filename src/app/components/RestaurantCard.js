@@ -37,7 +37,7 @@ export default function RestaurantCard({ restaurant, onDelete }) {
       <h2 className="text-xl font-semibold">{restaurant.name}</h2>
       <p>{restaurant.address}</p>
       <p className="text-gray-500 flex-grow">{restaurant.category}</p>
-      <div className="flex justify-center mt-auto space-x-2">
+      <div className="flex justify-center mt-auto space-x-0">
         <button
           className="bg-blue-500 text-white text-sm px-2 py-1 rounded mr-2"
           onClick={handleDetailsClick}
@@ -46,7 +46,7 @@ export default function RestaurantCard({ restaurant, onDelete }) {
         </button>
 
         <button
-          className="bg-red-500 text-white text-sm px-2 py-1 rounded"
+          className="text-red-500 text-sm px-2 py-1 rounded bg-transparent"
           onClick={handleDeleteClick} // Cambia a handleDeleteClick
         >
           Borrar
