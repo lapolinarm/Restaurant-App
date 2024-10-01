@@ -46,7 +46,7 @@ export default function RestaurantCard({ restaurant, onDelete }) {
         </button>
 
         <button
-          className="text-red-500 text-sm px-2 py-1 rounded bg-transparent"
+          className="border-2 border-red-500 text-red-500 text-sm px-2 py-1 rounded bg-transparent"
           onClick={handleDeleteClick} // Cambia a handleDeleteClick
         >
           Borrar
