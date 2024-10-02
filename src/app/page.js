@@ -5,10 +5,12 @@ import { useEffect, useState } from 'react';
 import RestaurantCard from './components/RestaurantCard';
 import RestaurantFilter from './components/RestaurantFilter';
 import NewRestaurantForm from './components/NewRestaurantForm';
+import SkeletonCard from './components/SkeletonCard';
 
 export default function Home() {
   const [restaurants, setRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [isPopupVisible, setPopupVisible] = useState(false);
 
   // Obtener los restaurantes inicialmente
@@ -22,8 +24,10 @@ export default function Home() {
       const data = await response.json();
       setRestaurants(data);
       setFilteredRestaurants(data);
+      setIsLoading(false); // Desactivar loading cuando se obtienen los datos
     } catch (error) {
       console.error('Error fetching restaurants:', error);
+      setIsLoading(false); // Asegurar que se desactive aunque haya error
     }
   };
 
@@ -79,14 +83,19 @@ export default function Home() {
       )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 w-full">
-        {filteredRestaurants.map((restaurant) => (
-          <RestaurantCard
-            key={restaurant.id}
-            restaurant={restaurant}
-            onDelete={handleDeleteRestaurant} // Pasa la función onDelete
-          />
-        ))}
+        {isLoading
+          ? Array.from({ length: 12 }).map((_, index) => (
+              <SkeletonCard key={index} />
+            )) // Muestra 6 skeletons mientras se cargan los restaurantes
+          : filteredRestaurants.map((restaurant) => (
+              <RestaurantCard
+                key={restaurant.id}
+                restaurant={restaurant}
+                onDelete={handleDeleteRestaurant} // Pasa la función onDelete
+              />
+            ))}
       </div>
+
     </main>
   );
 }
