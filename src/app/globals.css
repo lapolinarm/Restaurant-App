@@ -2,9 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg; /* Cambia esto según el valor inicial que desees */
+  syntax: "<angle>";
+}
+
+@keyframes animate-border {
+  0% {
+    --border-angle: 0deg; /* Valor inicial */
+  }
+  100% {
+    --border-angle: 360deg; /* Valor final para girar */
+  }
+}
+
+/* Clase para activar la animación */
+.animate-border:hover {
+  animation: animate-border 2s linear infinite; /* Cambia el tiempo y la duración según sea necesario */
+}
+
+
+
+
+
 :root {
-  --background: white;
-  --foreground: #171717;
+  --background: black;
+  --foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
