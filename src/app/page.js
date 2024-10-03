@@ -58,7 +58,7 @@ export default function Home() {
         <RestaurantFilter onFilter={handleFilter} />
         <button
           onClick={() => setPopupVisible(true)}
-          className="bg-blue-500 text-white p-2 rounded ml-4 flex items-center"
+          className="bg-[#13CE83] text-white p-2 rounded ml-4 flex items-center"
         >
           Nuevo Restaurante
         </button>
