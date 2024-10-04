@@ -67,13 +67,13 @@ export default function Home() {
       {/* Popup para el formulario */}
       {isPopupVisible && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded shadow-md w-96">
+          <div className="bg-[#2c2c2c] p-6 rounded shadow-md w-96">
             <h2 className="text-xl font-bold mb-4 text-center">Crear Nuevo Restaurante</h2>
             <NewRestaurantForm onNewRestaurant={handleNewRestaurant} />
             <div className="flex justify-center mt-4">
               <button
                 onClick={() => setPopupVisible(false)}
-                className="bg-red-500 text-white px-4 py-2 rounded"
+                className="bg-transparent border-2 text-white px-4 py-2 rounded"
               >
                 Cancelar
               </button>
