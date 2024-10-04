@@ -80,7 +80,7 @@ export default function NewRestaurantForm({ onNewRestaurant }) {
         required
         className="border border-gray-300 p-2 rounded"
       />
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+      <button type="submit" className="bg-[#13CE83] text-white px-4 py-2 rounded">
         Nuevo Restaurante
       </button>
     </form>
