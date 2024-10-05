@@ -54,7 +54,7 @@ export default function NewRestaurantForm({ onNewRestaurant }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col space-y-4 mb-4">
+    <form onSubmit={handleSubmit} className="text-gray-500 flex flex-col space-y-4 mb-4">
       <input
         ref={nameInputRef}
         type="text"
