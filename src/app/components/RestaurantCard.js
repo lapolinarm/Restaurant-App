@@ -1,6 +1,7 @@
 // src/app/components/RestaurantCard.js
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import { CheckCircle } from "lucide-react";
 
 export default function RestaurantCard({ restaurant, onDelete }) {
   const router = useRouter();
