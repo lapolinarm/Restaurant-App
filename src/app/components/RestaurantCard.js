@@ -1,6 +1,7 @@
 // src/app/components/RestaurantCard.js
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import { BadgeCheck } from "lucide-react";
 
 export default function RestaurantCard({ restaurant, onDelete }) {
   const router = useRouter();
@@ -40,7 +41,10 @@ export default function RestaurantCard({ restaurant, onDelete }) {
     (colors.purple.600)_86%,_theme(colors.purple.500)_90%,_theme(colors.
     purple.600)_94%,_theme(colors.slate.600/.48))_border-box] rounded-2xl
     border border-transparent animate-border">
-      <h2 className="text-xl font-semibold">{restaurant.name}</h2>
+      <h2 className="text-xl font-semibold flex items-center">
+        {restaurant.name}
+        <BadgeCheck className="ml-2 text-[#13CE83]" size={20} />
+      </h2>
       <p>{restaurant.address}</p>
       <p className="text-gray-500 flex-grow">{restaurant.category}</p>
       <div className="flex justify-center mt-auto space-x-0">
