@@ -52,7 +52,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col items-start p-4 mx-auto w-full max-w-4xl min-h-screen h-96 overflow-y-scroll scrollbar-hidden">
+    <main className="flex flex-col items-start p-4 pt-8 mx-auto w-full max-w-4xl min-h-screen h-96 overflow-y-scroll scrollbar-hidden">
       <h1 className="text-2xl font-bold mb-2">Lista de Restaurantes</h1>
       <div className="flex items-stretch mb-8">
         <RestaurantFilter onFilter={handleFilter} />
